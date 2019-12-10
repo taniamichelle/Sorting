@@ -20,9 +20,30 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-
+    # traverse through and compare all array elements in first iteration
+    # set the range for comparison (1st round: i, 2nd: i-1, 3rd: i-2, etc)
+    for i in range(len(arr)-1, 0, -1):
+        print('len(arr): ', len(arr))
+        # compare within set range of i
+        for j in range(i):
+            print('j: ', j, 'i: ', i)
+            # compare element(i) with its right side neighbor
+            if arr[j] > arr[j+1]:
+                # swap (smallest to the left) if element found (n)is greater than the next element(n + 1)
+                temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
     return arr
+    print('arr1: ', bubble_sort(arr1))
 
+# How SWAPping works using temp(orary) variable: 
+# a = 10
+# b = 5
+# temp = a #temp stores value of a temporarily. temp is later assigned to b
+# a = b
+# b = temp
+# print('a: ', a) #prints 5
+# print('b: ', b) #prints 10
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
